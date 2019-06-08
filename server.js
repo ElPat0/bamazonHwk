@@ -1,11 +1,11 @@
 //express
 const express = require('express');
 
-const path = require("path");
+const path = require('path');
 
 //we make an instantiation of express
 const app = express();
-const axios = require("axios");
+const axios = require('axios');
 
 const PORT = process.env.PORT || 3000;
 
