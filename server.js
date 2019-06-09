@@ -7,6 +7,14 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var items = [
+    {
+      items: "Beet & Goat Cheese Salad with minestrone soup."
+    }, {
+      items: "Pizza, two double veggie burgers, fries with a Big Gulp"
+    }
+  ];
+
 const path = require('path');
 
 const mysql = require('MySql');
@@ -43,17 +51,17 @@ connection.connect(function (err) {
 
 
 // Routes
-app.get("/weekday", function (req, res) {
-    res.render("index", lunches[0]);
+app.get("/list", function (req, res) {
+    res.render("index", items[0]);
 });
 
-app.get("/weekend", function (req, res) {
-    res.render("index", lunches[1]);
+app.get("/inventory", function (req, res) {
+    res.render("index", items[1]);
 });
 
-app.get("/lunches", function (req, res) {
-    res.render("all-lunches", {
-        foods: lunches,
+app.get("/sales", function (req, res) {
+    res.render("all-items", {
+        items: products,
         eater: "david"
     });
 });
