@@ -4,16 +4,16 @@ const express = require('express');
 const exphbs = require("express-handlebars");
 
 // Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-var items = [
-    {
-      items: "Beet & Goat Cheese Salad with minestrone soup."
-    }, {
-      items: "Pizza, two double veggie burgers, fries with a Big Gulp"
-    }
-  ];
+//app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+//app.set("view engine", "handlebars");
+//
+//var items = [
+//    {
+//      items: "Beet & Goat Cheese Salad with minestrone soup."
+//    }, {
+//      items: "Pizza, two double veggie burgers, fries with a Big Gulp"
+//    }
+//  ];
 
 const path = require('path');
 
@@ -62,7 +62,7 @@ app.get("/inventory", function (req, res) {
 app.get("/sales", function (req, res) {
     res.render("all-items", {
         items: products,
-        eater: "david"
+        
     });
 });
 
